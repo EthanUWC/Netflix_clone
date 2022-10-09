@@ -814,4 +814,5 @@ const view = {
             list.appendChild(item);
         })
     }
-}
+};
+

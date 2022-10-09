@@ -9,24 +9,33 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-<body id="home" class="container w-100 h-100 d-flex align-items-center justify-content-center bg-dark">
-    <div class="card">
+<body id="home"
+    style="background-image: url(./Images/Ntfl.jpg.crdownload); height: 100vh;">
+    <div class="d-flex">
+        <div class="p-2 w-100">
+            <img src="Images/Netflix_logo.jpeg" alt="Netflix logo" width="200 height="75">
+        </div>
+    </div>
+    <div style="width: 25%; background-color: rgba(0, 0, 0, 0.495); color: white;" class="card container d-flex align-items-center justify-content-center ">
         <div class="card-body">
-            <h3 class="card-title">Login</h3>
-            <form class="row g-3" id="loginForm">
+            <h3 class="card-title fw-bold">Sign in</h3>
+            <form class="row g-5" id="loginForm">
                 <div>
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" placeholder="name@example.com">
                 </div>
                 <div>
                     <label for="password" class="form-label ">Password</label>
-                    <div >
-                        <input type="password" class="form-control" id="password">
+                    <div>
+                        <input type="password" class="form-control" id="password" placeholder="L@#123!">
                     </div>
+                <div class="mb-3 form-check"> Remember me                    
+                    <input type="checkbox" class="form-check-input">
+                </div
                 </div>
                 <div>
                     <div class="col-auto">
-                        <button onclick="Authorization.login()" type="button" class="btn btn-primary mb-3">Login</button>
+                        <button onclick="Authorization.login()" type="button" class="btn btn-danger" style="width: 100%;" ">Sign in</button>
                     </div>
                 </div>
             </form>
