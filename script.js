@@ -805,13 +805,75 @@ const movies = {
     ]
 }
 
-const view = {
-    loadMovies() {
-        list =  document.getElementById('movies');
-        movies.movies.forEach(function(movie) {
-            const item = document.createElement('img');
-            item.src = movie.image;
-            list.appendChild(item);
-        })
-    }
-}
+const comMovie = {
+  loadMovies() {
+    comedyMovies = document.getElementById('comedy');
+    const comedies = movies.movies.filter(function (movie) {
+      movie.genres.includes({ "id": 2, "name": "Comedy"})
+    });
+    comedies.forEach(function (comedy) {
+      const item = document.createElement('img');
+      item.src = comedy.image;
+      comedyMovies.appendChild(item);
+    })
+  }
+};
+
+const dramaMovie = {
+  loadMovies() {
+    dramaMovies = document.getElementById('drama');
+    const dramas = movies.movies.filter(function (movie) {
+      movie.genres.includes({ "id": 1, "name": "Drama"})
+    });
+    dramas.forEach(function (drama) {
+      const item = document.createElement('img');
+      item.src = drama.image;
+      dramaMovie.appendChild(item);
+    })
+  }
+};
+
+const horrorMovie = {
+  loadMovies() {
+    horrorMovies = document.getElementById('horror');
+    const horrors = movies.movies.filter(function (movie) {
+      movie.genres.includes({ "id": 3, "name": "horror"})
+    });
+    horrors.forEach(function (horror) {
+      const item = document.createElement('img');
+      item.src = horror.image;
+      horrorMovie.appendChild(item);
+    })
+  }
+};
+
+const actionMovie = {
+  loadMovies() {
+    actionMovies = document.getElementById('action');
+    const actions = movies.movies.filter(function (movie) {
+      movie.genres.includes({ "id": 4, "name": "Action"})
+    });
+    actions.forEach(function (drama) {
+      const item = document.createElement('img');
+      item.src = action.image;
+      actionMovie.appendChild(item);
+    })
+  }
+};
+
+const romMovie = {
+  loadMovies() {
+    romanceMovies = document.getElementById('romance');
+    const romances = movies.movies.filter(function (movie) {
+      movie.genres.includes({ "id": 5, "name": "Romance"})
+    });
+    romances.forEach(function (romance) {
+      const item = document.createElement('img');
+      item.src = romance.image;
+      romMovie.appendChild(item);
+    })
+  }
+};
+
+
+
