@@ -579,6 +579,7 @@ const movies = {
             "release_date": "2023-02-19",
             "is_coming_soon": 1,
             "rating": 8,
+            "video": "Images/The_Matrix_trailer.mp4",
             "actors": [
               {
                 "id": 8,
@@ -781,6 +782,7 @@ const movies = {
             "release_date": "2023-01-04",
             "is_coming_soon": 1,
             "rating": 6,
+            "video": "Images/Y2Mate.is - Parasite (Gisaengchung) - Official Trailer-w_0KJAzyUJc-1080p-1655713259743.mp4",
             "actors": [
               {
                 "id": 12,
@@ -805,13 +807,94 @@ const movies = {
     ]
 }
 
-const view = {
-    loadMovies() {
-        list =  document.getElementById('movies');
-        movies.movies.forEach(function(movie) {
-            const item = document.createElement('img');
-            item.src = movie.image;
-            list.appendChild(item);
+const comMovie = {
+  loadMovies() {
+    comedyMovies = document.getElementById('comedy');
+    const comedies = movies.movies.filter(function (movie) {
+      return movie.genres[0].name == 'Comedy';
+    });
+    comedies.forEach(function (comedy) {
+        const img = document.createElement('img');
+        img.src = comedy.image;
+        const video = document.createElement('video');
+        video.src = comedy.video;
+        video.classList.add('visually-hidden')
+        img.addEventListener('mouseover', () => {
+          img.classList.add('visually-hidden')
+          video.classList.remove('visually-hidden')
+          video.play()
+        });
+        img.addEventListener('mouseleave', () => {
+          img.classList.remove('visually-hidden')
+          video.classList.add('visually-hidden')
+          video.pause()
         })
-    }
-}
+        comedyMovies.appendChild(img);
+        comedyMovies.appendChild(video);
+        // Add video links to all movies
+        // Style img tag
+        // Style video tag slightly bigger than img
+        // Use visially-hidden classlist on image tag onmouseenter
+        // Remove visially-hidden classlist on image tag onmouseleave
+    })
+  }
+};
+
+const dramaMovie = {
+  loadMovies() {
+    dramaMovies = document.getElementById('drama');
+    const dramas = movies.movies.filter(function (movie) {
+      return movie.genres[0].name == 'Drama';
+    });
+    dramas.forEach(function (drama) {
+      const item = document.createElement('img');
+      item.src = drama.image;
+      dramaMovies.appendChild(item);
+    })
+  }
+};
+
+const horrorMovie = {
+  loadMovies() {
+    horrorMovies = document.getElementById('horror');
+    const horrors = movies.movies.filter(function (movie) {
+      return movie.genres[0].name == 'Horror';
+    });
+    horrors.forEach(function (horror) {
+      const item = document.createElement('img');
+      item.src = horror.image;
+      horrorMovies.appendChild(item);
+    })
+  }
+};
+
+const actionMovie = {
+  loadMovies() {
+    actionMovies = document.getElementById('action');
+    const actions = movies.movies.filter(function (movie) {
+      return movie.genres[0].name == 'Action';
+    });
+    actions.forEach(function (action) {
+      const item = document.createElement('img');
+      item.src = action.image;
+      actionMovies.appendChild(item);
+    })
+  }
+};
+
+const romMovie = {
+  loadMovies() {
+    romanceMovies = document.getElementById('romance');
+    const romances = movies.movies.filter(function (movie) {
+      return movie.genres[0].name == 'Romance';
+    });
+    romances.forEach(function (romance) {
+      const item = document.createElement('img');
+      item.src = romance.image;
+      romanceMovies.appendChild(item);
+    })
+  }
+};
+
+
+
